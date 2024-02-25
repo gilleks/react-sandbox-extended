@@ -1,0 +1,50 @@
+{
+    "compilerOptions": {
+        "outDir": "./build/",
+        /*
+        * Highlights all places where the type is not specified
+        * however, this does not mean that any can no longer be used.
+        * this only means that in such situations the developer must explicitly write any
+        */
+        "noImplicitAny": true,
+        "module": "es6",
+        /*
+        * Which specification we compile to: to support most browsers
+        */
+        "target": "es5",
+        "jsx": "react",
+        /*
+        * The compiler will process not only TS files, but also JS files
+        */
+        "allowJs": true,
+        "moduleResolution": "node",
+        /*
+        * For absolute import
+        */
+        "baseUrl": ".",
+        /*
+        * esModuleInterop allows you to work with packages that use
+        * common js as with regular packages using import (require() module.export) = common js
+        * import Moment from 'moment';
+        * without the esModuleInterop flag the result is undefined
+        * console.log(Moment);
+        * with flag result [object Object]
+        * console.log(Moment)
+        */
+        "allowSyntheticDefaultImports": true,
+        /*
+        * If any library doesn't have a default import,
+        * loaders like ts-loader or babel-loader automatically create them
+        * instead of this import
+        * import * as React from 'react'
+        * you can write something like this
+        * import React from 'react'
+        */
+        "esModuleInterop": true
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+}
