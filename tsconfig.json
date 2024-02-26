@@ -12,7 +12,7 @@
         * Which specification we compile to: to support most browsers
         */
         "target": "es5",
-        "jsx": "react",
+        "jsx": "react-jsx",
         /*
         * The compiler will process not only TS files, but also JS files
         */
