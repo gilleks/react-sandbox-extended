@@ -7,7 +7,7 @@
         * this only means that in such situations the developer must explicitly write any
         */
         "noImplicitAny": true,
-        "module": "es6",
+        "module": "ESNext",
         /*
         * Which specification we compile to: to support most browsers
         */
