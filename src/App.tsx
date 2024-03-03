@@ -1,16 +1,19 @@
 import { FC, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
+
 import { AboutPageLazy } from './pages/AboutPage/AboutPage.lazy';
-
-import './index.scss';
 import { MainPageLazy } from './pages/MainPage/MainPage.lazy';
+import { useTheme } from './theme/hooks/useTheme';
 
+import './styles/index.scss';
 
 
 export const App: FC = () => {
+    const { theme, toggleTheme } = useTheme();
+
     return (
-        <div className='app'>
+        <div className={`app ${theme}`}>
+            <button onClick={toggleTheme}>TOGGLE THEME</button>
             <Link to={'/'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
             <Suspense fallback={<div>Loading...</div>}>
@@ -20,7 +23,7 @@ export const App: FC = () => {
                 </Routes>
             </Suspense>
         </div>
-    )
-}
+    );
+};
 
 export default App;
