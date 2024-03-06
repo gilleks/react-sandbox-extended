@@ -1,10 +1,10 @@
 import { FC, Suspense } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
-import { AboutPageLazy } from './pages/AboutPage/AboutPage.lazy';
-import { MainPageLazy } from './pages/MainPage/MainPage.lazy';
-import { useTheme } from './theme/hooks/useTheme';
-import { classNames } from './helpers/classNames/classNames';
+import { AboutPageLazy } from '../pages/AboutPage/AboutPage.lazy';
+import { MainPageLazy } from '../pages/MainPage/MainPage.lazy';
+import { useTheme } from './providers/themeProvider/lib/useTheme';
+import { classNames } from '../helpers/classNames/classNames';
 
 import './styles/index.scss';
 
