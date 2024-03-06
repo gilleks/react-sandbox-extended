@@ -13,7 +13,7 @@ export const App: FC = () => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={classNames('app', [theme], { hovered: true })}>
+        <div className={classNames('app', { hovered: true }, [theme])}>
             <button onClick={toggleTheme}>TOGGLE THEME</button>
             <Link to={'/'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
