@@ -1,0 +1,3 @@
+vs code editor
+
+1. "editor.renderWhitespace": "all",
