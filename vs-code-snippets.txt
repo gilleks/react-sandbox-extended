@@ -1,0 +1,24 @@
+"Create react component": {
+		"prefix": "myrc",
+		"body": [
+			"import { FC } from 'react';"
+			""
+			"import { classNames } from 'shared/lib/classNames/classNames';"
+			""
+			"import cls from './$TM_FILENAME_BASE.module.scss';"
+			""
+			"type ${1:${2:$TM_FILENAME_BASE}${3:PropsType}} = {"
+				"className?: string,"
+			"};"
+			""
+			"export const ${4:${2:$TM_FILENAME_BASE}}: FC<$1> = (props) => {"
+				"const { className } = props;"
+				""
+				"return ("
+					"<div className={classNames(cls.$TM_FILENAME_BASE, {}, [className])}>"
+					"</div>"
+				");"
+			"};"
+		],
+		"description": "Default react component"
+	}
