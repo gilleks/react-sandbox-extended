@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/themeProvider';
+import { Navbar } from 'widgets/Navbar';
 
 import './styles/index.scss';
 import { AppRouter } from './providers/router';
@@ -13,10 +13,9 @@ export const App: FC = () => {
 
     return (
         <div className={classNames('app', { hovered: true }, [theme])}>
-            <button onClick={toggleTheme}>TOGGLE THEME</button>
-            <Link to={'/'}>Главная</Link>
-            <Link to={'/about'}>О сайте</Link>
+            <Navbar />
             <AppRouter />
+            <button onClick={toggleTheme}>TOGGLE THEME</button>
         </div>
     );
 };
