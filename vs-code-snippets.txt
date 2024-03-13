@@ -7,6 +7,7 @@
 			""
 			"import cls from './$TM_FILENAME_BASE.module.scss';"
 			""
+			""
 			"type ${1:${2:$TM_FILENAME_BASE}${3:PropsType}} = {"
 				"className?: string,"
 			"};"
