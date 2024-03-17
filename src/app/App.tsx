@@ -6,6 +6,7 @@ import { Navbar } from 'widgets/Navbar';
 
 import './styles/index.scss';
 import { AppRouter } from './providers/router';
+import { Sidebar } from 'widgets/Sidebar';
 
 
 export const App: FC = () => {
@@ -14,7 +15,11 @@ export const App: FC = () => {
     return (
         <div className={classNames('app', { hovered: true }, [theme])}>
             <Navbar />
-            <AppRouter />
+            <div className='pageContent'>
+                <Sidebar />
+                <AppRouter />
+            </div>
+
         </div>
     );
 };
