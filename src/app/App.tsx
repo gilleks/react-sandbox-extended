@@ -3,10 +3,11 @@ import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'shared/hooks/useTheme';
 import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
+
+import { AppRouter } from './providers/router';
 
 import './styles/index.scss';
-import { AppRouter } from './providers/router';
-import { Sidebar } from 'widgets/Sidebar';
 
 
 export const App: FC = () => {
