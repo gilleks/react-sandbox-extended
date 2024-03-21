@@ -7,8 +7,11 @@ import { ThemeProvider } from './app/providers/themeProvider';
 
 import 'shared/config/i18n/i18n';
 
+const rootElement = document.querySelector('#root');
 
-const root = createRoot(document.getElementById("root"));
+if (!rootElement) throw new Error('Failed to find the root element');
+
+const root = createRoot(rootElement);
 
 root.render(
     <StrictMode>
