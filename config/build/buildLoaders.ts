@@ -43,6 +43,12 @@ export function buildLoaders(options: BuildOptionsTypes): webpack.RuleSetRule[] 
         use: ['@svgr/webpack'],
     };
 
+    const typeScriptLoader = {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+    };
+
     const babelLoader = {
         test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
@@ -54,10 +60,12 @@ export function buildLoaders(options: BuildOptionsTypes): webpack.RuleSetRule[] 
         }
     };
 
+    //* REMEMBER: The order in which loaders are loaded matters
     return [
-        cssLoader,
         fileLoader,
         svgLoader,
-        babelLoader
+        babelLoader,
+        typeScriptLoader,
+        cssLoader
     ];
 }
