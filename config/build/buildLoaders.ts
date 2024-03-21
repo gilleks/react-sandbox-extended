@@ -49,5 +49,23 @@ export function buildLoaders(options: BuildOptionsTypes): webpack.RuleSetRule[] 
         exclude: /node_modules/,
     };
 
-    return [typeScriptLoader, cssLoader, fileLoader, svgLoader];
+    const babelLoader = {
+        test: /\.(js|ts)x?$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env'],
+            }
+        }
+    };
+
+    //* REMEMBER: The order in which loaders are loaded matters
+    return [
+        fileLoader,
+        svgLoader,
+        babelLoader,
+        typeScriptLoader,
+        cssLoader
+    ];
 }
