@@ -1,3 +1,3 @@
 export type LangSwitcherPropsType = {
-    className?: string,
+    className?: string;
 };

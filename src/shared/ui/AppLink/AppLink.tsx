@@ -8,7 +8,6 @@ import { AppLinkTheme } from './AppLink.constants';
 
 import cls from './AppLink.module.scss';
 
-
 export const AppLink: FC<AppLinkPropsType> = (props) => {
     const {
         className,
@@ -21,7 +20,10 @@ export const AppLink: FC<AppLinkPropsType> = (props) => {
     return (
         <Link
             to={to}
-            className={classNames(cls.AppLink, { theme }, [className, cls[theme]])}
+            className={classNames(cls.AppLink, { theme }, [
+                className,
+                cls[theme],
+            ])}
             {...otherProps}
         >
             {children}

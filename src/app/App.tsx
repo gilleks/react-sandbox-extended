@@ -16,7 +16,7 @@ export const App: FC = () => {
         <div className={classNames('app', { hovered: true }, [theme])}>
             <Suspense fallback="loading">
                 <Navbar />
-                <div className='pageContent'>
+                <div className="pageContent">
                     <Sidebar />
                     <AppRouter />
                 </div>

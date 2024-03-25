@@ -4,7 +4,9 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { BuildOptionsTypes } from './types/config';
 
-export function buildPlugins(options: BuildOptionsTypes): webpack.WebpackPluginInstance[] {
+export function buildPlugins(
+    options: BuildOptionsTypes,
+): webpack.WebpackPluginInstance[] {
     const { paths, isDev } = options;
 
     return [
