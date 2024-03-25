@@ -14,5 +14,5 @@ export const COLORS = {
         secondaryColor: '#0449e0',
         invertedPrimaryColor: '#049604',
         invertedSecondaryColor: '#04ff04',
-    }
+    },
 };

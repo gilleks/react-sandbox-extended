@@ -3,7 +3,9 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { BuildOptionsTypes } from './types/config';
 
-export function buildLoaders(options: BuildOptionsTypes): webpack.RuleSetRule[] {
+export function buildLoaders(
+    options: BuildOptionsTypes,
+): webpack.RuleSetRule[] {
     const { isDev } = options;
 
     const cssLoader = {
@@ -53,19 +55,13 @@ export function buildLoaders(options: BuildOptionsTypes): webpack.RuleSetRule[] 
         test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-            }
-        }
+            },
+        },
     };
 
     //* REMEMBER: The order in which loaders are loaded matters
-    return [
-        fileLoader,
-        svgLoader,
-        babelLoader,
-        typeScriptLoader,
-        cssLoader
-    ];
+    return [fileLoader, svgLoader, babelLoader, typeScriptLoader, cssLoader];
 }

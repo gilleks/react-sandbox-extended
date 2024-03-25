@@ -9,7 +9,6 @@ import { getIconThemeButton } from './ThemeSwitcher.helpers';
 
 import cls from './ThemeSwitcher.module.scss';
 
-
 export const ThemeSwitcher: FC<ThemeSwitcherPropsType> = (props) => {
     const { className } = props;
 

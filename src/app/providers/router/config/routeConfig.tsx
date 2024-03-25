@@ -6,7 +6,7 @@ import { MainPage } from 'pages/MainPage';
 export enum AppRoutes {
     MAIN = 'main',
     ABOUT = 'about',
-};
+}
 
 export const routePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
@@ -21,5 +21,5 @@ export const routeConfig: RouteProps[] = [
     {
         path: routePath.about,
         element: <AboutPage />,
-    }
+    },
 ];

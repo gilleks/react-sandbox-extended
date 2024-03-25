@@ -4,7 +4,6 @@ import path from 'path';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildEnvTypes, BuildPathsTypes } from './config/build/types/config';
 
-
 export default (env: BuildEnvTypes) => {
     const { mode = 'development', port = 3000 } = env;
 

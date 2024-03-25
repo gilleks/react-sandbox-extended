@@ -8,7 +8,6 @@ import { AppButton, ThemeButton } from '../AppButton';
 
 import cls from './LangSwitcher.module.scss';
 
-
 export const LangSwitcher: FC<LangSwitcherPropsType> = (props) => {
     const { className } = props;
 
