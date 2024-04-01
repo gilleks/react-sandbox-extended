@@ -34,5 +34,12 @@ module.exports = {
         'react/button-has-type': ['error', { reset: true }],
         '@typescript-eslint/no-unused-vars': ['warn'],
         'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'react/self-closing-comp': [
+            'error',
+            {
+                component: true,
+                html: true,
+            },
+        ],
     },
 };
