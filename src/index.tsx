@@ -17,12 +17,12 @@ const root = createRoot(rootElement);
 
 root.render(
     <StrictMode>
-        <ErrorBoundary fallback={<PageError />}>
-            <BrowserRouter>
+        <BrowserRouter>
+            <ErrorBoundary fallback={<PageError />}>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
-            </BrowserRouter>
-        </ErrorBoundary>
+            </ErrorBoundary>
+        </BrowserRouter>
     </StrictMode>,
 );
