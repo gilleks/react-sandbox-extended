@@ -21,6 +21,10 @@ module.exports = {
                 sourceType: 'script',
             },
         },
+        {
+            files: ['**/src/**/*.test.{ts, tsx}'],
+            rules: { 'i18next/no-literal-string': 'off' },
+        },
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -33,7 +37,10 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/button-has-type': ['error', { reset: true }],
         '@typescript-eslint/no-unused-vars': ['warn'],
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, ignoreAttribute: ['data-testid'] },
+        ],
         'react/self-closing-comp': [
             'error',
             {

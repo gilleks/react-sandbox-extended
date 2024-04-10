@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
+import { AppButton } from 'shared/ui/AppButton';
 
 import cls from './Sidebar.module.scss';
 
@@ -24,10 +25,15 @@ export const Sidebar: FC<SidebarPropsType> = (props) => {
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
+            data-testid={'sidebar'}
         >
-            <button type="button" onClick={onToggle}>
+            <AppButton
+                type="button"
+                onClick={onToggle}
+                data-testid={'sidebar-toggle'}
+            >
                 TOGGLE
-            </button>
+            </AppButton>
 
             <div className={cls.switchers}>
                 <ThemeSwitcher />
