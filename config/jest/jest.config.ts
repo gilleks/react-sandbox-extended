@@ -4,6 +4,7 @@
  */
 
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
     // The root directory that Jest should scan for tests and modules within
@@ -42,6 +43,7 @@ const config: Config = {
 
     moduleNameMapper: {
         '\\.(css|scss|less)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
 
     // All imported modules in your tests should be mocked automatically
