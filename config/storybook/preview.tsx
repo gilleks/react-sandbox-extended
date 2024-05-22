@@ -1,8 +1,9 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
-import { StyleDecorator } from '../../src/shared/config/storybook/styleDecorator';
-
-import 'app/styles/index.scss';
+import { Theme } from '../../src/shared/lib/themeContext/themeContext';
+import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const preview: Preview = {
     parameters: {
@@ -15,9 +16,13 @@ const preview: Preview = {
     },
     decorators: [
         (Story) => (
-            <StyleDecorator>
-                <Story />
-            </StyleDecorator>
+            <RouterDecorator>
+                <ThemeDecorator theme={Theme.LIGHT}>
+                    <StyleDecorator>
+                        <Story />
+                    </StyleDecorator>
+                </ThemeDecorator>
+            </RouterDecorator>
         ),
     ],
 };

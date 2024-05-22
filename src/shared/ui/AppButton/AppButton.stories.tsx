@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { AppButton } from './AppButton';
 import { ThemeButton } from './AppButton.constants';
-import 'app/styles/index.scss';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'shared/lib/themeContext/themeContext';
+
 const meta = {
     title: 'shared/AppButton',
     component: AppButton,
@@ -15,6 +17,7 @@ const meta = {
 } satisfies Meta<typeof AppButton>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
@@ -35,4 +38,18 @@ export const OutLine: Story = {
         children: 'Text',
         theme: ThemeButton.OUTLINE,
     },
+};
+
+export const OutLineDark: Story = {
+    args: {
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
+    },
+    decorators: [
+        (Story) => (
+            <ThemeDecorator theme={Theme.DARK}>
+                <Story />
+            </ThemeDecorator>
+        ),
+    ],
 };
