@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: GitHub Actions for linting, testing, building
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
     push:
@@ -32,4 +32,4 @@ jobs:
             - name: unit testing
               run: npm run test:unit
             - name: build storybook
-              run: storybook:build
+              run: npm storybook:build
