@@ -4,3 +4,4 @@ vs code editor
 2. "files.eol": "\n" // end of line sequence LF(Unix "\n") or CRLF(Windows "\r\n"),
 3. "stylelint.validate": ["css", "scss"],
 4. "stylelint.config": null,
+5. "eslint.experimental.useFlatConfig": true,
