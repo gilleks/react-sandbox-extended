@@ -11,13 +11,13 @@
         /*
         * Which specification we compile to: to support most browsers
         */
-        "target": "es5",
+        "target": "ES2021",
         "jsx": "react-jsx",
         /*
         * The compiler will process not only TS files, but also JS files
         */
         "allowJs": true,
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         /*
         * For absolute import
         */
@@ -55,6 +55,9 @@
     "include": [
         "./src/**/*.ts",
         "./src/**/*.tsx",
-        "./config/jest/setupTests.ts"
+        "./config/jest/setupTests.ts",
+        "./config/**/*.ts",
+        "./config/**/*.tsx",
+        "./webpack.config.ts"
     ],
 }
