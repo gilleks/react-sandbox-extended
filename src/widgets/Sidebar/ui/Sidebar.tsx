@@ -3,7 +3,8 @@ import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
-import { AppButton } from 'shared/ui/AppButton';
+import { AppButton, ThemeButton } from 'shared/ui/AppButton';
+import { AppButtonSize } from 'shared/ui/AppButton/AppButton.constants';
 
 import cls from './Sidebar.module.scss';
 
@@ -28,11 +29,15 @@ export const Sidebar: FC<SidebarPropsType> = (props) => {
             data-testid={'sidebar'}
         >
             <AppButton
+                className={cls.collapseButton}
                 type="button"
                 onClick={onToggle}
                 data-testid={'sidebar-toggle'}
+                theme={ThemeButton.BACKGROUND_INVERTED}
+                size={AppButtonSize.L}
+                isSquare
             >
-                TOGGLE
+                {collapsed ? '>' : '<'}
             </AppButton>
 
             <div className={cls.switchers}>

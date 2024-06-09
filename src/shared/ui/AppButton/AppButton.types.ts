@@ -1,9 +1,11 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-import { ThemeButton } from './AppButton.constants';
+import { AppButtonSize, AppButtonTheme } from './AppButton.constants';
 
 export type AppButtonPropsType = ButtonHTMLAttributes<HTMLButtonElement> & {
     className?: string;
     children?: ReactNode;
-    theme?: ThemeButton;
+    theme?: AppButtonTheme;
+    size?: AppButtonSize;
+    isSquare?: boolean;
 };
