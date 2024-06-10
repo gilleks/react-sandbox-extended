@@ -54,6 +54,30 @@ export const OutLineDark: Story = {
     ],
 };
 
+export const OutLineSizeM: Story = {
+    args: {
+        children: 'Text',
+        theme: AppButtonTheme.OUTLINE,
+        size: AppButtonSize.M,
+    },
+};
+
+export const OutLineSizeL: Story = {
+    args: {
+        children: 'Text',
+        theme: AppButtonTheme.OUTLINE,
+        size: AppButtonSize.L,
+    },
+};
+
+export const OutLineSizeXL: Story = {
+    args: {
+        children: 'Text',
+        theme: AppButtonTheme.OUTLINE,
+        size: AppButtonSize.XL,
+    },
+};
+
 export const BackgroundTheme: Story = {
     args: {
         children: 'Text',
