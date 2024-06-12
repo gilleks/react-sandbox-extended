@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { AppButton } from './AppButton';
-import { ThemeButton } from './AppButton.constants';
+import { AppButtonSize, AppButtonTheme } from './AppButton.constants';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'shared/lib/themeContext/themeContext';
 
@@ -29,21 +29,21 @@ export const Primary: Story = {
 export const Clear: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.CLEAR,
+        theme: AppButtonTheme.CLEAR,
     },
 };
 
 export const OutLine: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.OUTLINE,
+        theme: AppButtonTheme.OUTLINE,
     },
 };
 
 export const OutLineDark: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.OUTLINE,
+        theme: AppButtonTheme.OUTLINE,
     },
     decorators: [
         (Story) => (
@@ -52,4 +52,77 @@ export const OutLineDark: Story = {
             </ThemeDecorator>
         ),
     ],
+};
+
+export const OutLineSizeM: Story = {
+    args: {
+        children: 'Text',
+        theme: AppButtonTheme.OUTLINE,
+        size: AppButtonSize.M,
+    },
+};
+
+export const OutLineSizeL: Story = {
+    args: {
+        children: 'Text',
+        theme: AppButtonTheme.OUTLINE,
+        size: AppButtonSize.L,
+    },
+};
+
+export const OutLineSizeXL: Story = {
+    args: {
+        children: 'Text',
+        theme: AppButtonTheme.OUTLINE,
+        size: AppButtonSize.XL,
+    },
+};
+
+export const BackgroundTheme: Story = {
+    args: {
+        children: 'Text',
+        theme: AppButtonTheme.BACKGROUND,
+    },
+};
+
+export const BackgroundInvertedTheme: Story = {
+    args: {
+        children: 'Text',
+        theme: AppButtonTheme.BACKGROUND_INVERTED,
+    },
+};
+
+export const Square: Story = {
+    args: {
+        children: '>',
+        theme: AppButtonTheme.BACKGROUND_INVERTED,
+        isSquare: true,
+    },
+};
+
+export const SquareSizeM: Story = {
+    args: {
+        children: '>',
+        theme: AppButtonTheme.BACKGROUND_INVERTED,
+        isSquare: true,
+        size: AppButtonSize.M,
+    },
+};
+
+export const SquareSizeL: Story = {
+    args: {
+        children: '>',
+        theme: AppButtonTheme.BACKGROUND_INVERTED,
+        isSquare: true,
+        size: AppButtonSize.L,
+    },
+};
+
+export const SquareSizeXL: Story = {
+    args: {
+        children: '>',
+        theme: AppButtonTheme.BACKGROUND_INVERTED,
+        isSquare: true,
+        size: AppButtonSize.XL,
+    },
 };

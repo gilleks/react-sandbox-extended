@@ -1,2 +1,2 @@
 export { AppButton } from './AppButton';
-export { ThemeButton } from './AppButton.constants';
+export { AppButtonTheme as ThemeButton } from './AppButton.constants';

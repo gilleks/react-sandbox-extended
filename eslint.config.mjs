@@ -19,7 +19,10 @@ export default tsEslint.config(
         },
     },
     {
-        ignores: ['eslint.config.mjs'],
+        ignores: [
+            'eslint.config.mjs',
+            'scripts/generate-visual-json-report.js',
+        ],
     },
     js.configs.recommended,
     ...tsEslint.configs.recommended,

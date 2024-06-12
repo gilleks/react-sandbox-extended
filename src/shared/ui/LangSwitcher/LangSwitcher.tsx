@@ -9,7 +9,7 @@ import { AppButton, ThemeButton } from '../AppButton';
 import cls from './LangSwitcher.module.scss';
 
 export const LangSwitcher: FC<LangSwitcherPropsType> = (props) => {
-    const { className } = props;
+    const { className, isShort } = props;
 
     const { t, i18n } = useTranslation();
 
@@ -23,7 +23,7 @@ export const LangSwitcher: FC<LangSwitcherPropsType> = (props) => {
             theme={ThemeButton.CLEAR}
             onClick={toggleLanguage}
         >
-            {t('Languages')}
+            {t(isShort ? 'ShortLanguages' : 'Languages')}
         </AppButton>
     );
 };
