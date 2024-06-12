@@ -1,16 +1,16 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { Sidebar } from './Sidebar';
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
+import { customRender } from 'shared/lib/tests/customRender/customRender';
 
 describe('<Sidebar />', () => {
     test('should show Sidebar', () => {
-        renderWithTranslation(<Sidebar />);
+        customRender(<Sidebar />, { router: true });
 
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 
     test('should added class collapsed if click on Toggle button', () => {
-        renderWithTranslation(<Sidebar />);
+        customRender(<Sidebar />, { router: true });
 
         const button = screen.getByTestId('sidebar-toggle');
 
