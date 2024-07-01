@@ -69,14 +69,14 @@ export const Modal: FC<ModalPropsType> = (props) => {
     }, [isOpen]);
 
     return (
-        <>
-            {/* <div className={classNames(cls.Modal, mods, [className])}>
+        <Portal>
+            <div className={classNames(cls.Modal, mods, [className])}>
                 <div className={cls.overlay} onClick={handleClose}>
                     <div className={cls.content} onClick={handleContentClick}>
                         {children}
                     </div>
                 </div>
-            </div> */}
-        </>
+            </div>
+        </Portal>
     );
 };
