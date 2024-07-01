@@ -6,6 +6,7 @@ import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginStorybook from 'eslint-plugin-storybook';
 import eslintPluginI18next from 'eslint-plugin-i18next';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default tsEslint.config(
@@ -16,6 +17,7 @@ export default tsEslint.config(
             prettier: eslintPluginPrettier,
             storybook: eslintPluginStorybook,
             i18next: eslintPluginI18next,
+            'react-hooks': eslintPluginReactHooks,
         },
     },
     {
@@ -58,11 +60,19 @@ export default tsEslint.config(
                     html: true,
                 },
             ],
+            //TODO: https://github.com/facebook/react/issues/28313 wait for something better than import { fixupPluginRules } from '@eslint/compat';
+            // ...eslintPluginReactHooks.configs.recommended.rules,
             //TODO: https://github.com/edvardchen/eslint-plugin-i18next/issues/123
             // 'i18next/no-literal-string': [
             //     'error',
             //     { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
             // ],
+        },
+    },
+    {
+        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
         },
     },
 );

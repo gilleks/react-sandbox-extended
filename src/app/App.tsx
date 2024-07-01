@@ -4,7 +4,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'shared/hooks/useTheme';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-
 import { AppRouter } from './providers/router';
 
 import './styles/index.scss';
