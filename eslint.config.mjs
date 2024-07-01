@@ -60,9 +60,8 @@ export default tsEslint.config(
                     html: true,
                 },
             ],
-            ...eslintPluginReactHooks.configs.recommended.rules,
-            'react-hooks/rules-of-hooks': 'error',
-            'react-hooks/exhaustive-deps': 'warn',
+            //TODO: https://github.com/facebook/react/issues/28313 wait for something better than import { fixupPluginRules } from '@eslint/compat';
+            // ...eslintPluginReactHooks.configs.recommended.rules,
             //TODO: https://github.com/edvardchen/eslint-plugin-i18next/issues/123
             // 'i18next/no-literal-string': [
             //     'error',
