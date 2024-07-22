@@ -24,6 +24,7 @@ export default tsEslint.config(
         ignores: [
             'eslint.config.mjs',
             'scripts/generate-visual-json-report.js',
+            'json-server/index.js',
         ],
     },
     js.configs.recommended,
