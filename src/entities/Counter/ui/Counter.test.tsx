@@ -6,6 +6,7 @@ import { userEvent } from '@testing-library/user-event';
 describe('Counter', () => {
     test('should render counter with value 10', () => {
         customRender(<Counter />, {
+            redux: true,
             initialState: { counter: { value: 10 } },
         });
 
@@ -16,6 +17,7 @@ describe('Counter', () => {
         const user = userEvent.setup();
 
         customRender(<Counter />, {
+            redux: true,
             initialState: { counter: { value: 10 } },
         });
 
@@ -28,6 +30,7 @@ describe('Counter', () => {
         const user = userEvent.setup();
 
         customRender(<Counter />, {
+            redux: true,
             initialState: { counter: { value: 10 } },
         });
 

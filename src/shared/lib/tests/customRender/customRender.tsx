@@ -8,6 +8,7 @@ import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 export type customRenderOptionsType = {
     route?: string;
     router?: boolean;
+    redux?: boolean;
     initialState?: Partial<StateSchema>;
 };
 
@@ -25,9 +26,14 @@ export const customRender = (
     component: ReactElement,
     options?: customRenderOptionsType,
 ) => {
-    const { route = '/', router = false, initialState } = options;
+    const {
+        router = false,
+        route = '/',
+        redux = false,
+        initialState,
+    } = options;
 
-    if (router) {
+    if (router && redux) {
         return render(
             <StoreProvider initialState={initialState}>
                 <MemoryRouter initialEntries={[route]}>
@@ -37,9 +43,21 @@ export const customRender = (
         );
     }
 
-    return render(
-        <StoreProvider initialState={initialState}>
-            <CommonRender component={component} />
-        </StoreProvider>,
-    );
+    if (router) {
+        return render(
+            <MemoryRouter initialEntries={[route]}>
+                <CommonRender component={component} />
+            </MemoryRouter>,
+        );
+    }
+
+    if (redux) {
+        return render(
+            <StoreProvider initialState={initialState}>
+                <CommonRender component={component} />
+            </StoreProvider>,
+        );
+    }
+
+    return render(<CommonRender component={component} />);
 };
