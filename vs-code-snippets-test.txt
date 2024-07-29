@@ -1,0 +1,11 @@
+"Create test": {
+		"prefix": "mytest",
+		"body": [
+			"describe('${2:$TM_FILENAME_BASE}', () => {"
+				"test('should ', () => {"
+					"expect().toEqual();"
+				"});"
+			"});"
+		],
+		"description": "Default test"
+	}

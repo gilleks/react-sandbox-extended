@@ -5,5 +5,7 @@
     "ReloadPage": "Обновить страницу",
     "ErrorCheck": "Проверить ошибку",
     "ShortLanguages": "РУ",
-    "LogIn": "Войти"
+    "LogIn": "Войти",
+    "Increment": "Прибавить",
+    "Decrement": "Убавить"
 }

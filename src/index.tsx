@@ -10,6 +10,7 @@ import { PageError } from 'widgets/PageError';
 import 'shared/config/i18n/i18n';
 
 import 'app/styles/index.scss';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 const rootElement = document.querySelector('#root');
 
@@ -18,13 +19,15 @@ if (!rootElement) throw new Error('Failed to find the root element');
 const root = createRoot(rootElement);
 
 root.render(
-    <StrictMode>
-        <BrowserRouter>
-            <ErrorBoundary fallback={<PageError />}>
-                <ThemeProvider>
-                    <App />
-                </ThemeProvider>
-            </ErrorBoundary>
-        </BrowserRouter>
-    </StrictMode>,
+    <StoreProvider>
+        <StrictMode>
+            <BrowserRouter>
+                <ErrorBoundary fallback={<PageError />}>
+                    <ThemeProvider>
+                        <App />
+                    </ThemeProvider>
+                </ErrorBoundary>
+            </BrowserRouter>
+        </StrictMode>
+    </StoreProvider>,
 );
