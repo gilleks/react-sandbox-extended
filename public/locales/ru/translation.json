@@ -7,5 +7,7 @@
     "ShortLanguages": "РУ",
     "LogIn": "Войти",
     "Increment": "Прибавить",
-    "Decrement": "Убавить"
+    "Decrement": "Убавить",
+    "EnterName": "Введите имя",
+    "EnterPassword": "Введите пароль"
 }

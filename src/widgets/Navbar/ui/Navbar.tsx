@@ -2,11 +2,11 @@ import { FC, useCallback, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { AppButton } from 'shared/ui/AppButton';
 import { AppButtonTheme } from 'shared/ui/AppButton/AppButton.constants';
 
 import cls from './Navbar.module.scss';
+import { LoginModal } from 'features/AuthByUsername';
 
 type NavbarPropsType = {
     className?: string;
@@ -18,8 +18,12 @@ export const Navbar: FC<NavbarPropsType> = (props) => {
 
     const { t } = useTranslation(['translation', 'about', 'main']);
 
-    const handleToggleAuthModal = useCallback(() => {
-        setIsAuthModalOpen((prev) => !prev);
+    const handleCloseAuthModal = useCallback(() => {
+        setIsAuthModalOpen(false);
+    }, []);
+
+    const handleOpenAuthModal = useCallback(() => {
+        setIsAuthModalOpen(true);
     }, []);
 
     return (
@@ -27,14 +31,15 @@ export const Navbar: FC<NavbarPropsType> = (props) => {
             <AppButton
                 className={cls.links}
                 theme={AppButtonTheme.BACKGROUND_INVERTED}
-                onClick={handleToggleAuthModal}
+                onClick={handleOpenAuthModal}
             >
                 {t('LogIn')}
             </AppButton>
-            <Modal isOpen={isAuthModalOpen} onClose={handleToggleAuthModal}>
-                TEST DATA FOR MODAL WINDOW 1 TEST DATA FOR MODAL WINDOW 2 TEST
-                DATA FOR MODAL WINDOW 3
-            </Modal>
+
+            <LoginModal
+                isOpen={isAuthModalOpen}
+                onClose={handleCloseAuthModal}
+            />
         </div>
     );
 };

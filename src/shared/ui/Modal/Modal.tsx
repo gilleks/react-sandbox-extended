@@ -9,6 +9,7 @@ import {
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
+import { useTheme } from 'shared/hooks/useTheme';
 
 import cls from './Modal.module.scss';
 
@@ -19,13 +20,18 @@ type ModalPropsType = {
     children?: ReactNode;
     isOpen: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 };
 
 export const Modal: FC<ModalPropsType> = (props) => {
-    const { className, children, isOpen, onClose } = props;
+    const { className, children, isOpen, onClose, lazy } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
     const refTimer = useRef<ReturnType<typeof setTimeout>>();
+
+    const { theme } = useTheme();
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
@@ -58,6 +64,12 @@ export const Modal: FC<ModalPropsType> = (props) => {
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', handleKeyDown);
         }
 
@@ -67,9 +79,13 @@ export const Modal: FC<ModalPropsType> = (props) => {
         };
     }, [isOpen]);
 
+    if (lazy && !isMounted) {
+        return null;
+    }
+
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, mods, [className, theme])}>
                 <div className={cls.overlay} onClick={handleClose}>
                     <div className={cls.content} onClick={handleContentClick}>
                         {children}
