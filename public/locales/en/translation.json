@@ -7,5 +7,7 @@
     "ShortLanguages": "EN",
     "LogIn": "Log In",
     "Increment": "Increment",
-    "Decrement": "Decrement"
+    "Decrement": "Decrement",
+    "EnterName": "Enter name",
+    "EnterPassword": "Enter password"
 }
